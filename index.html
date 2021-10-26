@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <header>
+        <h1 class='page-title'>Splitter</h1>
+    </header>
+    <main>
+        <section class='calculator-container'>
+            <form class='calculator-inputs' id='calculator-form'>
+
+                <div class='bill-container'>
+                    <label for="bill-input" class='calc-label'>Bill</label>
+                    <input type="text" id='bill-input' name='bill' class='calc-input'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                </div>
+                <fieldset class='tips-container'>
+                    <legend class='tips-title'>Select Tip %</legend>
+
+                    <label for="five-percent" class='tips-label'>5%</label>
+                    <input type="radio" name="percentage" id="five-percent" class='tips-input' value='5' onclick='getTip(event)'>
+
+                    <label for="ten-percent" class='tips-label'>10%</label>
+                    <input type="radio" name="percentage" id="ten-percent" class='tips-input' value='10' onclick='getTip(event)'>
+
+                    <label for="fifteen-percent" class='tips-label'>15%</label>
+                    <input type="radio" name="percentage" id="fifteen-percent" class='tips-input' value='15' onclick='getTip(event)'>
+
+                    <label for="twenty-five-percent" class='tips-label'>25%</label>
+                    <input type="radio" name="percentage" id="twenty-five-percent" class='tips-input' value='25' onclick='getTip(event)'>
+
+                    <label for="fifty-percent" class='tips-label'>50%</label>
+                    <input type="radio" name="percentage" id="fifty-percent" class='tips-input' value='50' onclick='getTip(event)'>
+                </fieldset>
+
+                <div class='amount-people-container'>
+                    <label for="number-of-people" class='calc-label'>Number of people</label>
+                    <input type="text" name="number-of-people" id="number-of-people"  class='calc-input'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                </div>
+            </form>
+            <div class='calculator-outputs'>
+                <div class='outputs-container'> 
+                    <div class='tip-output'>
+                        <div class='output-label'>
+                            <p class='output-title'>Tip Amount</p>
+                            <span class='output-span'>/person</span>
+                        </div>
+                        <p class='output-value' id='output-tip'>$0.00</p>
+                    </div>
+                    <div class='total-output'>
+                        <div class='output-label'>
+                            <p class='output-title'>Total</p>
+                            <span class='output-span'>/person</span>
+                        </div>
+                        <p class='output-value' id='output-total'>$0.00</p>
+                    </div>
+                </div>
+
+                <button class='reset-btn' onclick='resetCalculator()'>Reset</button>
+
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
