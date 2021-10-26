@@ -17,7 +17,7 @@ function getTip(event){
         let tipOutput = document.getElementById('output-tip')
         tipOutput.innerHTML = `$${tipValue}`
 
-        let totalValue = bill / amountOfPeople + tipValue
+        let totalValue = Math.round((bill / amountOfPeople + tipValue) * 100) / 100
         let totalOutput = document.getElementById('output-total')
         totalOutput.innerHTML = `$${totalValue}`
     }
